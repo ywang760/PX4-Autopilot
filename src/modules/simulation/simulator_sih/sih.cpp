@@ -41,6 +41,7 @@
  */
 
 #include "aero.hpp"
+#include "am_tilted_hex_dynamics.hpp"
 #include "sih.hpp"
 
 #include <px4_platform_common/getopt.h>
@@ -352,7 +353,9 @@ uint8_t Sih::num_motors() const
 	switch (_vehicle) {
 	case VehicleType::Quadcopter:     return 4;
 
-	case VehicleType::Hexacopter:     return 6;
+	case VehicleType::Hexacopter:       return 6;
+
+	case VehicleType::TiltedHexacopter: return am_tilted_hex::NumRotors;
 
 	case VehicleType::TailsitterVTOL: return NUM_DYN_THRUSTER; // motors at index 0..1, surfaces at 4..5
 
@@ -443,6 +446,14 @@ void Sih::generate_force_and_torques(const float dt)
 				 _Q_MAX * (+u_sq[0] - u_sq[1] + u_sq[2] - u_sq[3] + u_sq[4] - u_sq[5]));
 		_Fa_E = -_KDV * _R_N2E * _v_apparent_N; // first order drag to slow down the aircraft
 		_Ma_B = -_KDW * _w_B; // first order angular damper
+
+	} else if (_vehicle == VehicleType::TiltedHexacopter) {
+		const am_tilted_hex::Wrench wrench =
+			am_tilted_hex::computeWrench(_u, _L_ROLL, _T_MAX, _Q_MAX);
+		_T_B = wrench.force;
+		_Mt_B = wrench.moment;
+		_Fa_E = -_KDV * _R_N2E * _v_apparent_N;
+		_Ma_B = -_KDW * _w_B;
 
 	} else if (_vehicle == VehicleType::FixedWing) {
 
@@ -611,6 +622,7 @@ void Sih::equations_of_motion(const float dt)
 	if ((_lla.altitude() - _lpos_ref_alt) < 0.f && force_down > 0.f) {
 		if (_vehicle == VehicleType::Quadcopter
 		    || _vehicle == VehicleType::Hexacopter
+		    || _vehicle == VehicleType::TiltedHexacopter
 		    || _vehicle == VehicleType::TailsitterVTOL
 		    || _vehicle == VehicleType::StandardVTOL) {
 			ground_force_E = -sum_of_forces_E;
@@ -923,6 +935,9 @@ int Sih::print_status()
 
 	} else if (_vehicle == VehicleType::Hexacopter) {
 		PX4_INFO("Hexacopter");
+
+	} else if (_vehicle == VehicleType::TiltedHexacopter) {
+		PX4_INFO("Aerial-manipulator tilted hexacopter");
 
 	} else if (_vehicle == VehicleType::FixedWing) {
 		PX4_INFO("Fixed-Wing");

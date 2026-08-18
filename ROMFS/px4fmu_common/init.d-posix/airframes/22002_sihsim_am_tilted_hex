@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# @name Aerial Manipulator tilted hex (SIH)
+#
+# @type Simulation
+# @class Copter
+#
+# @maintainer LeCAR Lab <lecar-lab@cmu.edu>
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=sihsim}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=am_tilted_hex}
+
+param set-default SENS_EN_GPSSIM 1
+param set-default SENS_EN_BAROSIM 1
+param set-default SENS_EN_MAGSIM 1
+
+param set SIH_VEHICLE_TYPE 6
+param set-default MAV_TYPE 13
+param set-default CA_AIRFRAME 0
+# Match PX4's upstream 6-DoF omnicopter: pseudo-inverse plus final clipping.
+param set-default CA_METHOD 0
+
+# Exact normalized flight-proven geometry and motor order. Ct=1 is an
+# allocation normalization value; it is not a measured physical coefficient.
+param set-default CA_ROTOR_COUNT 6
+
+param set-default CA_ROTOR0_PX 0
+param set-default CA_ROTOR0_PY 1
+param set-default CA_ROTOR0_AX 0.5
+param set-default CA_ROTOR0_AY 0
+param set-default CA_ROTOR0_AZ -0.866025
+param set-default CA_ROTOR0_CT 1
+param set-default CA_ROTOR0_KM -0.05
+
+param set-default CA_ROTOR1_PX 0
+param set-default CA_ROTOR1_PY -1
+param set-default CA_ROTOR1_AX 0.5
+param set-default CA_ROTOR1_AY 0
+param set-default CA_ROTOR1_AZ -0.866025
+param set-default CA_ROTOR1_CT 1
+param set-default CA_ROTOR1_KM 0.05
+
+param set-default CA_ROTOR2_PX 0.866025
+param set-default CA_ROTOR2_PY -0.5
+param set-default CA_ROTOR2_AX -0.25
+param set-default CA_ROTOR2_AY -0.4330125
+param set-default CA_ROTOR2_AZ -0.866025
+param set-default CA_ROTOR2_CT 1
+param set-default CA_ROTOR2_KM -0.05
+
+param set-default CA_ROTOR3_PX -0.866025
+param set-default CA_ROTOR3_PY 0.5
+param set-default CA_ROTOR3_AX -0.25
+param set-default CA_ROTOR3_AY -0.4330125
+param set-default CA_ROTOR3_AZ -0.866025
+param set-default CA_ROTOR3_CT 1
+param set-default CA_ROTOR3_KM 0.05
+
+param set-default CA_ROTOR4_PX 0.866025
+param set-default CA_ROTOR4_PY 0.5
+param set-default CA_ROTOR4_AX -0.25
+param set-default CA_ROTOR4_AY 0.4330125
+param set-default CA_ROTOR4_AZ -0.866025
+param set-default CA_ROTOR4_CT 1
+param set-default CA_ROTOR4_KM 0.05
+
+param set-default CA_ROTOR5_PX -0.866025
+param set-default CA_ROTOR5_PY -0.5
+param set-default CA_ROTOR5_AX -0.25
+param set-default CA_ROTOR5_AY 0.4330125
+param set-default CA_ROTOR5_AZ -0.866025
+param set-default CA_ROTOR5_CT 1
+param set-default CA_ROTOR5_KM -0.05
+
+param set-default PWM_MAIN_FUNC1 101
+param set-default PWM_MAIN_FUNC2 102
+param set-default PWM_MAIN_FUNC3 103
+param set-default PWM_MAIN_FUNC4 104
+param set-default PWM_MAIN_FUNC5 105
+param set-default PWM_MAIN_FUNC6 106
+
+param set-default SENS_GPS0_DELAY 0
+param set-default SENS_GPS1_DELAY 0
+
+# Measured as-flown mass and rotor radius. Inertia is a six-point ring
+# surrogate (Ixx=Iyy=m*r^2/2, Izz=m*r^2), pending system identification.
+param set-default SIH_MASS 7.024
+param set-default SIH_IXX 0.476385
+param set-default SIH_IYY 0.476385
+param set-default SIH_IZZ 0.952770
+param set-default SIH_L_ROLL 0.3683
+param set-default SIH_L_PITCH 0.3683
+
+# Per-rotor simulation surrogate: two times hover vertical authority total,
+# with reaction torque fixed to the normalized |Km|=0.05 ratio.
+param set-default SIH_T_MAX 26.5127
+param set-default SIH_Q_MAX 1.32564
+param set-default THR_MDL_FAC 1
+param set-default MPC_THR_HOVER 0.5

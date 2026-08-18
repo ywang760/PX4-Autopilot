@@ -1,0 +1,102 @@
+#!/bin/sh
+#
+# @name Aerial Manipulator tilted hex (Gazebo)
+#
+# @type Simulation
+# @class Copter
+#
+# @maintainer LeCAR Lab <lecar-lab@cmu.edu>
+#
+
+. ${R}etc/init.d/rc.mc_defaults
+
+PX4_SIMULATOR=${PX4_SIMULATOR:=gz}
+PX4_GZ_WORLD=${PX4_GZ_WORLD:=default}
+PX4_SIM_MODEL=${PX4_SIM_MODEL:=am_tilted_hex}
+
+param set-default SIM_GZ_EN 1
+param set-default MAV_TYPE 13
+param set-default CA_AIRFRAME 0
+# PX4's sequential desaturation prioritizes conventional R/P/Y/Z axes. This
+# full-rank 6-DoF geometry follows the upstream omnicopter's explicit clipped
+# pseudo-inverse method so saturation has one transparent final clip.
+param set-default CA_METHOD 0
+
+# SITL-only normalized geometry. Motor order is a compatibility requirement:
+# 1 mid-right, 2 mid-left, 3 front-left, 4 rear-right, 5 front-right, 6 rear-left.
+# The common Ct=1 is not a measured physical rotor coefficient.
+param set-default CA_ROTOR_COUNT 6
+
+param set-default CA_ROTOR0_PX 0
+param set-default CA_ROTOR0_PY 1
+param set-default CA_ROTOR0_AX 0.5
+param set-default CA_ROTOR0_AY 0
+param set-default CA_ROTOR0_AZ -0.866025
+param set-default CA_ROTOR0_CT 1
+param set-default CA_ROTOR0_KM -0.05
+
+param set-default CA_ROTOR1_PX 0
+param set-default CA_ROTOR1_PY -1
+param set-default CA_ROTOR1_AX 0.5
+param set-default CA_ROTOR1_AY 0
+param set-default CA_ROTOR1_AZ -0.866025
+param set-default CA_ROTOR1_CT 1
+param set-default CA_ROTOR1_KM 0.05
+
+param set-default CA_ROTOR2_PX 0.866025
+param set-default CA_ROTOR2_PY -0.5
+param set-default CA_ROTOR2_AX -0.25
+param set-default CA_ROTOR2_AY -0.4330125
+param set-default CA_ROTOR2_AZ -0.866025
+param set-default CA_ROTOR2_CT 1
+param set-default CA_ROTOR2_KM -0.05
+
+param set-default CA_ROTOR3_PX -0.866025
+param set-default CA_ROTOR3_PY 0.5
+param set-default CA_ROTOR3_AX -0.25
+param set-default CA_ROTOR3_AY -0.4330125
+param set-default CA_ROTOR3_AZ -0.866025
+param set-default CA_ROTOR3_CT 1
+param set-default CA_ROTOR3_KM 0.05
+
+param set-default CA_ROTOR4_PX 0.866025
+param set-default CA_ROTOR4_PY 0.5
+param set-default CA_ROTOR4_AX -0.25
+param set-default CA_ROTOR4_AY 0.4330125
+param set-default CA_ROTOR4_AZ -0.866025
+param set-default CA_ROTOR4_CT 1
+param set-default CA_ROTOR4_KM 0.05
+
+param set-default CA_ROTOR5_PX -0.866025
+param set-default CA_ROTOR5_PY -0.5
+param set-default CA_ROTOR5_AX -0.25
+param set-default CA_ROTOR5_AY 0.4330125
+param set-default CA_ROTOR5_AZ -0.866025
+param set-default CA_ROTOR5_CT 1
+param set-default CA_ROTOR5_KM -0.05
+
+param set-default SIM_GZ_EC_FUNC1 101
+param set-default SIM_GZ_EC_FUNC2 102
+param set-default SIM_GZ_EC_FUNC3 103
+param set-default SIM_GZ_EC_FUNC4 104
+param set-default SIM_GZ_EC_FUNC5 105
+param set-default SIM_GZ_EC_FUNC6 106
+
+# These bounds match the simulator's motor-speed domain, not flight ESC PWM.
+param set-default SIM_GZ_EC_MIN1 0
+param set-default SIM_GZ_EC_MIN2 0
+param set-default SIM_GZ_EC_MIN3 0
+param set-default SIM_GZ_EC_MIN4 0
+param set-default SIM_GZ_EC_MIN5 0
+param set-default SIM_GZ_EC_MIN6 0
+param set-default SIM_GZ_EC_MAX1 1500
+param set-default SIM_GZ_EC_MAX2 1500
+param set-default SIM_GZ_EC_MAX3 1500
+param set-default SIM_GZ_EC_MAX4 1500
+param set-default SIM_GZ_EC_MAX5 1500
+param set-default SIM_GZ_EC_MAX6 1500
+
+# Simulation surrogate: 50% normalized collective balances the measured mass.
+param set-default THR_MDL_FAC 1
+param set-default MPC_THR_HOVER 0.5
+param set-default NAV_DLL_ACT 2
