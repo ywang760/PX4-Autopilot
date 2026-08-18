@@ -38,6 +38,8 @@ px4_add_module(
 		${MAX_CUSTOM_OPT_LEVEL}
 	SRCS
 		aero.hpp
+		am_tilted_hex_dynamics.cpp
+		am_tilted_hex_dynamics.hpp
 		sih.cpp
 		sih.hpp
 	MODULE_CONFIG
@@ -53,6 +55,7 @@ px4_add_module(
 if(PX4_PLATFORM MATCHES "posix")
 	# create targets for sihsim
 	set(models
+		am_tilted_hex
 		airplane
 		quadx
 		xvert
@@ -107,3 +110,9 @@ if(PX4_PLATFORM MATCHES "posix")
 	endforeach()
 
 endif()
+
+px4_add_unit_gtest(
+	SRC am_tilted_hex_dynamics_test.cpp
+	EXTRA_SRCS am_tilted_hex_dynamics.cpp
+	LINKLIBS mathlib
+)

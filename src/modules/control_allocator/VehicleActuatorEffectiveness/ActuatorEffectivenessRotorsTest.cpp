@@ -136,6 +136,79 @@ TEST(ActuatorEffectivenessRotors, HexarotorX)
 	EXPECT_EQ(effectiveness, effectiveness_expected);
 }
 
+TEST(ActuatorEffectivenessRotors, AerialManipulatorTiltedHex)
+{
+	// Flight-proven order: mid-right, mid-left, front-left, rear-right,
+	// front-right, rear-left. These are normalized geometry coefficients.
+	ActuatorEffectivenessRotors::Geometry geometry{};
+	geometry.num_rotors = 6;
+
+	geometry.rotors[0] = {{0.f, 1.f, 0.f}, {.5f, 0.f, -.866025f}, 1.f, -.05f, -1};
+	geometry.rotors[1] = {{0.f, -1.f, 0.f}, {.5f, 0.f, -.866025f}, 1.f, .05f, -1};
+	geometry.rotors[2] = {{.866025f, -.5f, 0.f}, {-.25f, -.4330125f, -.866025f}, 1.f, -.05f, -1};
+	geometry.rotors[3] = {{-.866025f, .5f, 0.f}, {-.25f, -.4330125f, -.866025f}, 1.f, .05f, -1};
+	geometry.rotors[4] = {{.866025f, .5f, 0.f}, {-.25f, .4330125f, -.866025f}, 1.f, .05f, -1};
+	geometry.rotors[5] = {{-.866025f, -.5f, 0.f}, {-.25f, .4330125f, -.866025f}, 1.f, -.05f, -1};
+
+	ActuatorEffectiveness::EffectivenessMatrix effectiveness;
+	EXPECT_EQ(ActuatorEffectivenessRotors::computeEffectivenessMatrix(geometry, effectiveness), 6);
+
+	const float expected[6][6] = {
+		{-.841025294f, .841025294f, .420512684f, -.420512684f, -.420512684f, .420512684f},
+		{0.f, 0.f, .728348994f, -.728348994f, .728348994f, -.728348994f},
+		{-.543301440f, .543301440f, -.543301138f, .543301138f, .543301138f, -.543301138f},
+		{.500000175f, .500000175f, -.250000109f, -.250000109f, -.250000109f, -.250000109f},
+		{0.f, 0.f, -.433012689f, -.433012689f, .433012689f, .433012689f},
+		{-.866025303f, -.866025303f, -.866025379f, -.866025379f, -.866025379f, -.866025379f}
+	};
+
+	for (int row = 0; row < 6; ++row) {
+		for (int column = 0; column < 6; ++column) {
+			EXPECT_NEAR(effectiveness(row, column), expected[row][column], 1.e-6f);
+		}
+	}
+
+	// Equal commands must cancel every moment and horizontal force while
+	// retaining vertical thrust. This also catches ordering/sign regressions.
+	for (int row = 0; row < 5; ++row) {
+		float sum = 0.f;
+
+		for (int column = 0; column < 6; ++column) {
+			sum += effectiveness(row, column);
+		}
+
+		EXPECT_NEAR(sum, 0.f, 1.e-6f);
+	}
+
+	float vertical_sum = 0.f;
+
+	for (int column = 0; column < 6; ++column) {
+		vertical_sum += effectiveness(5, column);
+	}
+
+	EXPECT_NEAR(vertical_sum, -6.f * .8660254f, 1.e-5f);
+
+	// A successful inverse and identity product prove the locked 6x6 wrench
+	// matrix is full rank in the actual PX4 matrix implementation.
+	matrix::SquareMatrix<float, 6> wrench_matrix;
+
+	for (int row = 0; row < 6; ++row) {
+		for (int column = 0; column < 6; ++column) {
+			wrench_matrix(row, column) = effectiveness(row, column);
+		}
+	}
+
+	matrix::SquareMatrix<float, 6> inverse;
+	ASSERT_TRUE(matrix::inv(wrench_matrix, inverse));
+	const matrix::SquareMatrix<float, 6> identity = wrench_matrix * inverse;
+
+	for (int row = 0; row < 6; ++row) {
+		for (int column = 0; column < 6; ++column) {
+			EXPECT_NEAR(identity(row, column), row == column ? 1.f : 0.f, 1.e-4f);
+		}
+	}
+}
+
 TEST(ActuatorEffectivenessRotors, Tilt)
 {
 	Vector3f axis_expected{0.f, 0.f, -1.f};
