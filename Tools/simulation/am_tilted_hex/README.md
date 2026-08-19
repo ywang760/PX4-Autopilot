@@ -32,3 +32,19 @@ The harness fails instead of attaching when another PX4 process, MAVLink port
 owner, or Gazebo world is active. It commands only UDP SITL and has no serial,
 upload, flash, or hardware mode. Passing it does not authorize an embedded
 build, hardware test, or flight.
+
+## Continuous integration
+
+`.github/workflows/am_tilted_hex_sitl.yml` runs the same gate as two required
+and independently visible jobs on every pull request into, and push to, the
+personal fork's `release/1.18` branch:
+
+- SIH uses the PX4 host dependencies without external simulation packages;
+- Gazebo installs the official PX4 Gazebo Harmonic dependencies and runs
+  headless.
+
+Both jobs use a clean recursive checkout, run the helper tests, build their
+target, execute the lifecycle, and retain summaries, PX4 output, ULogs, and
+checksums for 14 days. The workflow is also manually dispatchable. It performs
+continuous integration only; it does not deploy, package, flash, or contact
+hardware.
