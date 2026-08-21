@@ -21,7 +21,7 @@ env:
   PYTHONUNBUFFERED: 1
 
 jobs:
-  nominal-lifecycle:
+  lifecycle-and-safe-faults:
     name: ${{ matrix.label }}
     runs-on: ubuntu-24.04
     timeout-minutes: 45
@@ -30,10 +30,10 @@ jobs:
       matrix:
         include:
           - simulator: sih
-            label: SIH nominal lifecycle
+            label: SIH lifecycle and SAFE faults
             setup_flags: --no-nuttx --no-sim-tools
           - simulator: gazebo
-            label: Gazebo nominal lifecycle
+            label: Gazebo lifecycle and SAFE faults
             setup_flags: --no-nuttx
 
     steps:
@@ -67,6 +67,7 @@ jobs:
         run: >-
           python3 Tools/simulation/am_tilted_hex/run_lifecycle.py
           --simulator ${{ matrix.simulator }}
+          --scenario all
 
       - name: Upload lifecycle evidence
         if: always()
