@@ -1,0 +1,41 @@
+# Aerial-manipulator FMUv4 feasibility variant.
+#
+# This variant intentionally inherits px4/fmu-v4/default. Keep every override
+# explicit so review can distinguish resource trimming from upstream behavior.
+
+# Retain the upstream client and topic contract. The companion runs the Agent;
+# ROS 2 does not run on the flight controller.
+CONFIG_MODULES_UXRCE_DDS_CLIENT=y
+
+# This aircraft is a multicopter. Remove controllers and estimators for other
+# vehicle classes, while retaining Commander, Navigator, EKF2, the complete MC
+# control path, RC input, MAVLink, logging, and actuator testing/recovery.
+CONFIG_MODULES_AIRSPEED_SELECTOR=n
+CONFIG_MODULES_CAMERA_FEEDBACK=n
+CONFIG_MODULES_FW_ATT_CONTROL=n
+CONFIG_MODULES_FW_AUTOTUNE_ATTITUDE_CONTROL=n
+CONFIG_MODULES_FW_MODE_MANAGER=n
+CONFIG_MODULES_FW_LATERAL_LONGITUDINAL_CONTROL=n
+CONFIG_MODULES_FW_RATE_CONTROL=n
+CONFIG_MODULES_GIMBAL=n
+CONFIG_MODULES_LANDING_TARGET_ESTIMATOR=n
+CONFIG_MODULES_LOCAL_POSITION_ESTIMATOR=n
+CONFIG_MODULES_MC_AUTOTUNE_ATTITUDE_CONTROL=n
+CONFIG_MODULES_UUV_ATT_CONTROL=n
+CONFIG_MODULES_UUV_POS_CONTROL=n
+CONFIG_MODULES_VTOL_ATT_CONTROL=n
+
+# These interfaces are not installed on the preserved aircraft. Keep the
+# board's ADC/power path, GPS, barometers, magnetometers, actual IMUs, PWM,
+# safety button, tone alarm, S.Bus RC, USB, and SD-card support unchanged.
+CONFIG_DRIVERS_CAMERA_CAPTURE=n
+CONFIG_DRIVERS_CAMERA_TRIGGER=n
+CONFIG_COMMON_DIFFERENTIAL_PRESSURE=n
+CONFIG_COMMON_DISTANCE_SENSOR=n
+CONFIG_DRIVERS_GNSS_SEPTENTRIO=n
+CONFIG_DRIVERS_IMU_ANALOG_DEVICES_ADIS16448=n
+CONFIG_DRIVERS_IMU_INVENSENSE_ICM20948=n
+CONFIG_DRIVERS_IRLOCK=n
+CONFIG_DRIVERS_PCA9685_PWM_OUT=n
+CONFIG_DRIVERS_PWM_INPUT=n
+CONFIG_EXAMPLES_FAKE_GPS=n
