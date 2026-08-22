@@ -66,6 +66,17 @@ jobs:
           --baseline-build-dir build/px4_fmu-v4_default
           --report build/px4_fmu-v4_am_tilted_hex/fw01-audit.json
 
+      - name: Audit FW-02 bench package and immutable companion pins
+        run: python3 Tools/bench/am_fmuv4/fw02_audit.py --ci
+
+      - name: Record this CI build's embedded source identity and hashes
+        run: |
+          git rev-parse HEAD > build/px4_fmu-v4_am_tilted_hex/ci-source-commit.txt
+          sha256sum \
+            build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.px4 \
+            build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.bin \
+            > build/px4_fmu-v4_am_tilted_hex/ci-SHA256SUMS
+
       - name: Upload firmware evidence
         if: always()
         uses: actions/upload-artifact@v7
@@ -73,7 +84,13 @@ jobs:
           name: am-fmuv4-${{ github.run_id }}
           path: |
             build/px4_fmu-v4_am_tilted_hex/fw01-audit.json
+            build/px4_fmu-v4_am_tilted_hex/ci-source-commit.txt
+            build/px4_fmu-v4_am_tilted_hex/ci-SHA256SUMS
             build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.px4
+            Tools/bench/am_fmuv4/artifacts/build-manifest.json
+            Tools/bench/am_fmuv4/artifacts/SHA256SUMS
+            Tools/bench/am_fmuv4/params/am_fmuv4_lab02a.params
+            Tools/bench/am_fmuv4/params/migration-inventory.tsv
             build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.map
             build/px4_fmu-v4_am_tilted_hex/boardconfig
             build/px4_fmu-v4_default/px4_fmu-v4_default.map
@@ -86,6 +103,45 @@ jobs:
         uses: ./.github/actions/save-ccache
         with:
           cache-primary-key: ${{ steps.ccache.outputs.cache-primary-key }}
+
+  fw02-companion-image:
+    name: FW-02 pinned Jazzy shadow image
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out PX4
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Build pinned Agent and px4_msgs image
+        working-directory: Tools/bench/am_fmuv4/agent
+        run: docker compose --env-file pins.env -f compose.yaml build
+
+      - name: Verify image pins, tools, and observed message definitions
+        working-directory: Tools/bench/am_fmuv4/agent
+        run: ./verify-image.sh
+
+      - name: Prove the observer fails closed without FC topics
+        working-directory: Tools/bench/am_fmuv4/agent
+        run: |
+          mkdir -p evidence
+          export HOST_UID=$(id -u)
+          export HOST_GID=$(id -g)
+          set +e
+          docker compose --env-file pins.env -f compose.yaml run --rm --no-deps \
+            shadow-observer python3 /opt/am_fw02/shadow_monitor.py \
+            --duration 0.5 --output /evidence/no-fc.json
+          status=$?
+          set -e
+          test "$status" -eq 2
+          python3 -c 'import json; report=json.load(open("evidence/no-fc.json")); assert report["pass"] is False and report["missing_required_topics"]'
+
+      - name: Tear down isolated shadow network
+        if: always()
+        working-directory: Tools/bench/am_fmuv4/agent
+        run: docker compose --env-file pins.env -f compose.yaml down
 
   lifecycle-and-safe-faults:
     name: ${{ matrix.label }}

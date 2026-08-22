@@ -1,0 +1,57 @@
+services:
+  xrce-agent:
+    build:
+      context: .
+      args:
+        ROS_IMAGE: ${ROS_IMAGE}
+        XRCE_AGENT_COMMIT: ${XRCE_AGENT_COMMIT}
+        FASTCDR_COMMIT: ${FASTCDR_COMMIT}
+        FASTDDS_COMMIT: ${FASTDDS_COMMIT}
+        PX4_MSGS_COMMIT: ${PX4_MSGS_COMMIT}
+    image: am-px4-jazzy-xrce:fw02
+    networks:
+      - fw02-shadow
+    devices:
+      - ${XRCE_SERIAL_DEVICE:-/dev/ttyUSB0}:${XRCE_SERIAL_DEVICE:-/dev/ttyUSB0}
+    command:
+      - MicroXRCEAgent
+      - serial
+      - --dev
+      - ${XRCE_SERIAL_DEVICE:-/dev/ttyUSB0}
+      - -b
+      - "921600"
+      - -v
+      - "4"
+    restart: "no"
+    security_opt:
+      - no-new-privileges:true
+
+  shadow-observer:
+    image: am-px4-jazzy-xrce:fw02
+    user: ${HOST_UID:-1000}:${HOST_GID:-1000}
+    networks:
+      - fw02-shadow
+    read_only: true
+    cap_drop:
+      - ALL
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-0}
+      ROS_LOG_DIR: /tmp/ros-log
+    volumes:
+      - ${SHADOW_OUTPUT_DIR:-./evidence}:/evidence
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m,mode=1777
+    command:
+      - python3
+      - /opt/am_fw02/shadow_monitor.py
+      - --duration
+      - ${SHADOW_DURATION:-120}
+      - --output
+      - /evidence/dds-shadow.json
+    restart: "no"
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  fw02-shadow:
+    internal: true

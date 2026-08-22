@@ -1,0 +1,729 @@
+legacy_name	legacy_value	target_name	target_value	disposition	rationale
+BAT1_ADC_CHANNEL	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT1_A_PER_V	36.36800003051758	BAT1_A_PER_V	36.36800003051758	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_CAPACITY	10000.0	BAT1_CAPACITY	10000.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_N_CELLS	6	BAT1_N_CELLS	6	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_R_INTERNAL	-1.0	BAT1_R_INTERNAL	-1.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_SOURCE	0	BAT1_SOURCE	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_V_CHARGED	4.199999809265137	BAT1_V_CHARGED	4.199999809265137	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_V_DIV	21.5	BAT1_V_DIV	21.5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_V_EMPTY	3.5	BAT1_V_EMPTY	3.5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_V_LOAD_DROP	0.30000001192092896			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_ADC_CHANNEL	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_A_PER_V	36.36800003051758			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_CAPACITY	10000.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_CNT_V_CURR	0.0008056640508584678			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_CNT_V_VOLT	0.0008056640508584678			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_CRIT_THR	0.05000000074505806	BAT_CRIT_THR	0.05	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT_EMERGEN_THR	0.029999999329447746	BAT_EMERGEN_THR	0.03	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT_LOW_THR	0.11999999731779099	BAT_LOW_THR	0.12	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT_N_CELLS	6			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_R_INTERNAL	-1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_SOURCE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_V_CHARGED	4.199999809265137			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_V_DIV	21.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_V_EMPTY	3.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_V_LOAD_DROP	0.30000001192092896			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+BAT_V_OFFS_CURR	0.0	BAT_V_OFFS_CURR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CAL_ACC0_EN	1			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_ID	3607306	CAL_ACC0_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_XOFF	-0.07818126678466797	CAL_ACC0_XOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_XSCALE	1.0069326162338257	CAL_ACC0_XSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_YOFF	-0.032962799072265625	CAL_ACC0_YOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_YSCALE	1.0091991424560547	CAL_ACC0_YSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_ZOFF	-0.05399322509765625	CAL_ACC0_ZOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC0_ZSCALE	0.9960370063781738	CAL_ACC0_ZSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_EN	1			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_ID	1442826	CAL_ACC1_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_XOFF	-0.02600574493408203	CAL_ACC1_XOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_XSCALE	1.0084742307662964	CAL_ACC1_XSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_YOFF	0.18013238906860352	CAL_ACC1_YOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_YSCALE	0.9997014403343201	CAL_ACC1_YSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_ZOFF	-0.2563033103942871	CAL_ACC1_ZOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC1_ZSCALE	0.983040988445282	CAL_ACC1_ZSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_ACC_PRIME	3607306			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_AIR_CMODEL	0	CAL_AIR_CMODEL		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_AIR_TUBED_MM	1.5	CAL_AIR_TUBED_MM		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_AIR_TUBELEN	0.20000000298023224	CAL_AIR_TUBELEN		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_BARO_PRIME	0			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO0_EN	1			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO0_ID	3672842	CAL_GYRO0_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO0_XOFF	0.03610885888338089	CAL_GYRO0_XOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO0_YOFF	0.026852987706661224	CAL_GYRO0_YOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO0_ZOFF	-0.004190580453723669	CAL_GYRO0_ZOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO1_EN	1			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO1_ID	2360330	CAL_GYRO1_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO1_XOFF	0.008602394722402096	CAL_GYRO1_XOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO1_YOFF	0.021817632019519806	CAL_GYRO1_YOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO1_ZOFF	0.0010786961065605283	CAL_GYRO1_ZOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_GYRO_PRIME	3672842			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_EN	1			fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_ID	263178	CAL_MAG0_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_ROT	-1	CAL_MAG0_ROT		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_XOFF	0.5279958248138428	CAL_MAG0_XOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_XSCALE	1.0006399154663086	CAL_MAG0_XSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_YOFF	0.029654808342456818	CAL_MAG0_YOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_YSCALE	0.9968854188919067	CAL_MAG0_YSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_ZOFF	0.09016383439302444	CAL_MAG0_ZOFF		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG0_ZSCALE	0.9953116178512573	CAL_MAG0_ZSCALE		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG1_ID	0	CAL_MAG1_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG1_ROT	0	CAL_MAG1_ROT		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG2_ID	0	CAL_MAG2_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG2_ROT	-1	CAL_MAG2_ROT		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG3_ID	0	CAL_MAG3_ID		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG3_ROT	-1	CAL_MAG3_ROT		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAL_MAG_SIDES	63	CAL_MAG_SIDES		fresh_calibration	Do not import sensor IDs or calibration coefficients across a major firmware migration; calibrate and verify installed sensors on v1.18.
+CAM_CAP_FBACK	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+CBRK_AIRSPD_CHK	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+CBRK_BUZZER	0	CBRK_BUZZER		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CBRK_ENGINEFAIL	284953			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+CBRK_FLIGHTTERM	121212	CBRK_FLIGHTTERM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CBRK_IO_SAFETY	22027	CBRK_IO_SAFETY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CBRK_RATE_CTRL	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+CBRK_SUPPLY_CHK	0	CBRK_SUPPLY_CHK		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CBRK_USB_CHK	197848	CBRK_USB_CHK		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CBRK_VELPOSERR	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_AUTH	256010			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_AUTH_REQ	0	COM_ARM_AUTH_REQ		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_CHK_ESCS	1	COM_ARM_CHK_ESCS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_EKF_AB	0.0017300000181421638			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_EKF_GB	0.0008699999889358878			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_EKF_HGT	1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_EKF_POS	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_EKF_VEL	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_EKF_YAW	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_ARM_IMU_ACC	0.699999988079071	COM_ARM_IMU_ACC		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_IMU_GYR	0.25	COM_ARM_IMU_GYR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_MAG_STR	2	COM_ARM_MAG_STR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_MIS_REQ	0	COM_ARM_MIS_REQ		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_ARM_SWISBTN	0	COM_ARM_SWISBTN	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_ARM_WO_GPS	1	COM_ARM_WO_GPS	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_DISARM_LAND	2.0	COM_DISARM_LAND		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_DISARM_PRFLT	0.0	COM_DISARM_PRFLT	10.0	bench_override	Use the v1.18 10 s automatic preflight disarm instead of legacy disabled behavior.
+COM_DL_LOSS_T	10	COM_DL_LOSS_T		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_EF_C2T	5.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_EF_THROT	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_EF_TIME	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_FLIGHT_UUID	1495	COM_FLIGHT_UUID		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_FLTMODE1	0	COM_FLTMODE1	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLTMODE2	-1	COM_FLTMODE2	-1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLTMODE3	-1	COM_FLTMODE3	-1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLTMODE4	2	COM_FLTMODE4	2	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLTMODE5	-1	COM_FLTMODE5	-1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLTMODE6	2	COM_FLTMODE6	2	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_FLT_PROFILE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_HLDL_LOSS_T	120	COM_HLDL_LOSS_T		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_HLDL_REG_T	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_HOME_H_T	5.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_HOME_V_T	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_KILL_DISARM	30.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_LOW_BAT_ACT	0	COM_LOW_BAT_ACT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_MOT_TEST_EN	1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_OA_BOOT_T	100			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_OBL_ACT	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_OBL_RC_ACT	2	COM_OBL_RC_ACT	0	bench_override	Use Position as the approved default after offboard loss; physical RC remains authoritative.
+COM_OBS_AVOID	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_OF_LOSS_T	0.0	COM_OF_LOSS_T	1.0	bench_override	Use the v1.18 1 s timeout instead of the legacy zero-second transition.
+COM_POSCTL_NAVL	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_POS_FS_DELAY	1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_POS_FS_EPH	5.0	COM_POS_FS_EPH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+COM_POS_FS_EPV	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_POS_FS_GAIN	10			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_POS_FS_PROB	30			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_PREARM_MODE	1	COM_PREARM_MODE	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_RC_ARM_HYST	1000			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_RC_IN_MODE	0	COM_RC_IN_MODE	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_RC_LOSS_T	0.5	COM_RC_LOSS_T	0.5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+COM_RC_OVERRIDE	1	MAN_OVERRIDE_SPD	1.0	translated_successor	Replace enable/disable semantics with the v1.18 speed-based manual override.
+COM_RC_STICK_OV	12.0	MAN_OVERRIDE_SPD	1.0	translated_successor	No numeric percent-to-speed conversion exists; use the reviewed v1.18 threshold.
+COM_TAKEOFF_ACT	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+COM_VEL_FS_EVH	1.0	COM_VEL_FS_EVH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CP_DELAY	0.4000000059604645	CP_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CP_DIST	-1.0	CP_DIST		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CP_GO_NO_DATA	0.0	CP_GO_NO_DATA		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+CP_GUIDE_ANG	30.0	CP_GUIDE_ANG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+DSHOT_CONFIG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+DSHOT_TEL_CFG	0	DSHOT_TEL_CFG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ABIAS_INIT	0.20000000298023224	EKF2_ABIAS_INIT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ABL_ACCLIM	25.0	EKF2_ABL_ACCLIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ABL_GYRLIM	3.0	EKF2_ABL_GYRLIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ABL_LIM	0.4000000059604645	EKF2_ABL_LIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ABL_TAU	0.5	EKF2_ABL_TAU		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ACC_B_NOISE	0.003000000026077032	EKF2_ACC_B_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ACC_NOISE	1.0	EKF2_ACC_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_AID_MASK	24	EKF2_EV_CTRL	11	translated_successor	Translate legacy EV position+yaw and vision-height semantics to the v1.18 fusion bitmask.
+EKF2_ANGERR_INIT	0.10000000149011612	EKF2_ANGERR_INIT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ARSP_THR	0.0	EKF2_ARSP_THR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ASPD_MAX	20.0	EKF2_ASPD_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_ASP_DELAY	100.0	EKF2_ASP_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_AVEL_DELAY	5.0	EKF2_AVEL_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BARO_DELAY	0.0	EKF2_BARO_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BARO_GATE	5.0	EKF2_BARO_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BARO_NOISE	15.0	EKF2_BARO_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BCOEF_X	25.0	EKF2_BCOEF_X		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BCOEF_Y	25.0	EKF2_BCOEF_Y		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BETA_GATE	5.0	EKF2_BETA_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_BETA_NOISE	0.30000001192092896	EKF2_BETA_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_DECL_TYPE	7	EKF2_DECL_TYPE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_DRAG_NOISE	10.0	EKF2_DRAG_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EAS_NOISE	1.399999976158142	EKF2_EAS_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EVA_NOISE	0.05000000074505806	EKF2_EVA_NOISE	0.05	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+EKF2_EVP_GATE	5.0	EKF2_EVP_GATE	5.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+EKF2_EVP_NOISE	0.009999999776482582	EKF2_EVP_NOISE	0.01	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+EKF2_EVV_GATE	3.0	EKF2_EVV_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EVV_NOISE	0.10000000149011612	EKF2_EVV_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EV_DELAY	10.0	EKF2_EV_DELAY	10.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+EKF2_EV_NOISE_MD	0	EKF2_EV_NOISE_MD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EV_POS_X	0.0	EKF2_EV_POS_X		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EV_POS_Y	0.0	EKF2_EV_POS_Y		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_EV_POS_Z	0.0	EKF2_EV_POS_Z		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_FUSE_BETA	0	EKF2_FUSE_BETA		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GBIAS_INIT	0.10000000149011612	EKF2_GBIAS_INIT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GND_EFF_DZ	0.0	EKF2_GND_EFF_DZ		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GND_MAX_HGT	0.5	EKF2_GND_MAX_HGT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GPS_CHECK	245	EKF2_GPS_CHECK		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GPS_DELAY	110.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_MASK	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_POS_X	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_POS_Y	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_POS_Z	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_P_GATE	5.0	EKF2_GPS_P_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GPS_P_NOISE	10.0	EKF2_GPS_P_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GPS_TAU	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_GPS_V_GATE	5.0	EKF2_GPS_V_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GPS_V_NOISE	0.5	EKF2_GPS_V_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GYR_B_NOISE	0.0010000000474974513	EKF2_GYR_B_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_GYR_NOISE	0.014999999664723873	EKF2_GYR_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_HDG_GATE	2.5999999046325684	EKF2_HDG_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_HEAD_NOISE	0.9983283281326294	EKF2_HEAD_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_HGT_MODE	3	EKF2_HGT_REF	3	translated_successor	Translate legacy vision height selection to EKF2_HGT_REF.
+EKF2_IMU_POS_X	0.0	EKF2_IMU_POS_X		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_IMU_POS_Y	0.0	EKF2_IMU_POS_Y		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_IMU_POS_Z	0.0	EKF2_IMU_POS_Z		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAGBIAS_ID	263178			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAGBIAS_X	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAGBIAS_Y	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAGBIAS_Z	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAGB_K	0.20000000298023224			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAGB_VREF	2.499999993688107e-07			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MAG_ACCLIM	0.5	EKF2_MAG_ACCLIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_B_NOISE	9.999999747378752e-05	EKF2_MAG_B_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_CHECK	0	EKF2_MAG_CHECK		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_DECL	0.0	EKF2_MAG_DECL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_DELAY	0.0	EKF2_MAG_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_E_NOISE	0.0010000000474974513	EKF2_MAG_E_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_GATE	3.0	EKF2_MAG_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_NOISE	1.0	EKF2_MAG_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MAG_TYPE	5	EKF2_MAG_TYPE	5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+EKF2_MAG_YAWLIM	0.25			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MIN_OBS_DT	20			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_MIN_RNG	0.10000000149011612	EKF2_MIN_RNG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_MOVE_TEST	1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_NOAID_NOISE	10.0	EKF2_NOAID_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_NOAID_TOUT	5000000	EKF2_NOAID_TOUT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_DELAY	5.0	EKF2_OF_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_GATE	3.0	EKF2_OF_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_N_MAX	0.5	EKF2_OF_N_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_N_MIN	0.15000000596046448	EKF2_OF_N_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_POS_X	0.0	EKF2_OF_POS_X		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_POS_Y	0.0	EKF2_OF_POS_Y		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_POS_Z	0.0	EKF2_OF_POS_Z		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_OF_QMIN	1	EKF2_OF_QMIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_PCOEF_XN	0.0	EKF2_PCOEF_XN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_PCOEF_XP	0.0	EKF2_PCOEF_XP		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_PCOEF_YN	0.0	EKF2_PCOEF_YN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_PCOEF_YP	0.0	EKF2_PCOEF_YP		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_PCOEF_Z	0.0	EKF2_PCOEF_Z		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_EPH	3.0	EKF2_REQ_EPH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_EPV	5.0	EKF2_REQ_EPV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_GPS_H	10.0	EKF2_REQ_GPS_H		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_HDRIFT	0.10000000149011612	EKF2_REQ_HDRIFT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_NSATS	6	EKF2_REQ_NSATS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_PDOP	2.5	EKF2_REQ_PDOP		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_SACC	0.5	EKF2_REQ_SACC		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_REQ_VDRIFT	0.20000000298023224	EKF2_REQ_VDRIFT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_AID	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_RNG_A_HMAX	5.0	EKF2_RNG_A_HMAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_A_IGATE	1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EKF2_RNG_A_VMAX	1.0	EKF2_RNG_A_VMAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_DELAY	5.0	EKF2_RNG_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_GATE	5.0	EKF2_RNG_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_NOISE	0.10000000149011612	EKF2_RNG_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_PITCH	0.0	EKF2_RNG_PITCH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_POS_X	0.0	EKF2_RNG_POS_X		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_POS_Y	0.0	EKF2_RNG_POS_Y		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_POS_Z	0.0	EKF2_RNG_POS_Z		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_RNG_SFE	0.05000000074505806	EKF2_RNG_SFE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_TAS_GATE	3.0	EKF2_TAS_GATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_TAU_POS	0.25	EKF2_TAU_POS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_TAU_VEL	0.25	EKF2_TAU_VEL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_TERR_GRAD	0.5	EKF2_TERR_GRAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_TERR_NOISE	5.0	EKF2_TERR_NOISE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EKF2_WIND_NOISE	1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+EV_TSK_RC_LOSS	0	EV_TSK_RC_LOSS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+EV_TSK_STAT_DIS	0	EV_TSK_STAT_DIS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_EXT_ATS_EN	0	FD_EXT_ATS_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_EXT_ATS_TRIG	1900	FD_EXT_ATS_TRIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_FAIL_P	60	FD_FAIL_P		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_FAIL_P_TTRI	0.30000001192092896	FD_FAIL_P_TTRI		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_FAIL_R	60	FD_FAIL_R		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+FD_FAIL_R_TTRI	0.30000001192092896	FD_FAIL_R_TTRI		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GF_ACTION	1	GF_ACTION		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GF_ALTMODE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+GF_COUNT	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+GF_MAX_HOR_DIST	0.0	GF_MAX_HOR_DIST		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GF_MAX_VER_DIST	0.0	GF_MAX_VER_DIST		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GF_SOURCE	0	GF_SOURCE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GPS_1_CONFIG	201	GPS_1_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GPS_2_CONFIG	0	GPS_2_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GPS_DUMP_COMM	0	GPS_DUMP_COMM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GPS_UBX_DYNMODEL	7	GPS_UBX_DYNMODEL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+GPS_YAW_OFFSET	0.0	GPS_YAW_OFFSET		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+IMU_ACCEL_CUTOFF	30.0	IMU_ACCEL_CUTOFF		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+IMU_GYRO_CUTOFF	30.0	IMU_GYRO_CUTOFF		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+IMU_GYRO_NF_BW	20.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+IMU_GYRO_NF_FREQ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+IMU_GYRO_RATEMAX	0	IMU_GYRO_RATEMAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+ISBD_CONFIG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LIGHT_EN_BLINKM	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LNDMC_ALT_MAX	-1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LNDMC_FFALL_THR	2.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LNDMC_FFALL_TTRI	0.30000001192092896			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LNDMC_LOW_T_THR	0.30000001192092896			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+LNDMC_ROT_MAX	20.0	LNDMC_ROT_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+LNDMC_XY_VEL_MAX	1.5	LNDMC_XY_VEL_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+LNDMC_Z_VEL_MAX	0.5	LNDMC_Z_VEL_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+LND_FLIGHT_T_HI	17	LND_FLIGHT_T_HI		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+LND_FLIGHT_T_LO	2050351552	LND_FLIGHT_T_LO		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_0_CONFIG	101	MAV_0_CONFIG	0	bench_override	Disable TELEM1 MAVLink because that byte stream is exclusively assigned to DDS.
+MAV_0_FORWARD	1	MAV_0_FORWARD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_0_MODE	0	MAV_0_MODE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_0_RATE	57600	MAV_0_RATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_1_CONFIG	102	MAV_1_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_1_FORWARD	0	MAV_1_FORWARD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_1_MODE	2	MAV_1_MODE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_1_RATE	921600	MAV_1_RATE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_2_CONFIG	0	MAV_2_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_COMP_ID	1	MAV_COMP_ID		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_FWDEXTSP	1	MAV_FWDEXTSP		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_HASH_CHK_EN	1	MAV_HASH_CHK_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_HB_FORW_EN	1	MAV_HB_FORW_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_ODOM_LP	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MAV_PROTO_VER	0	MAV_PROTO_VER		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_RADIO_ID	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MAV_SYS_ID	1	MAV_SYS_ID		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_TYPE	2	MAV_TYPE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MAV_USEHILGPS	0	MAV_USEHILGPS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MC_ACRO_EXPO	0.6899999976158142	MC_ACRO_EXPO		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_EXPO_Y	0.6899999976158142	MC_ACRO_EXPO_Y		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_P_MAX	720.0	MC_ACRO_P_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_R_MAX	720.0	MC_ACRO_R_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_SUPEXPO	0.699999988079071	MC_ACRO_SUPEXPO		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_SUPEXPOY	0.699999988079071	MC_ACRO_SUPEXPOY		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ACRO_Y_MAX	540.0	MC_ACRO_Y_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_AIRMODE	1	MC_AIRMODE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_BAT_SCALE_EN	0	MC_BAT_SCALE_EN		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_DTERM_CUTOFF	20.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_D	0.003000000026077032	MC_PITCHRATE_D		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_FF	0.0	MC_PITCHRATE_FF		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_I	0.10000000149011612	MC_PITCHRATE_I		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_K	1.0	MC_PITCHRATE_K		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_MAX	180.0	MC_PITCHRATE_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCHRATE_P	0.3499999940395355	MC_PITCHRATE_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PITCH_P	4.0	MC_PITCH_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_PR_INT_LIM	0.30000001192092896	MC_PR_INT_LIM		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_RATT_TH	0.800000011920929			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_D	0.003000000026077032	MC_ROLLRATE_D		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_FF	0.0	MC_ROLLRATE_FF		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_I	0.10000000149011612	MC_ROLLRATE_I		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_K	1.0	MC_ROLLRATE_K		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_MAX	180.0	MC_ROLLRATE_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLLRATE_P	0.33000001311302185	MC_ROLLRATE_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_ROLL_P	3.5999999046325684	MC_ROLL_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_RR_INT_LIM	0.30000001192092896	MC_RR_INT_LIM		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_D	0.0	MC_YAWRATE_D		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_FF	0.0	MC_YAWRATE_FF		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_I	0.10000000149011612	MC_YAWRATE_I		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_K	1.0	MC_YAWRATE_K		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_MAX	200.0	MC_YAWRATE_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAWRATE_P	0.23999999463558197	MC_YAWRATE_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YAW_P	3.5999999046325684	MC_YAW_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MC_YR_INT_LIM	0.30000001192092896	MC_YR_INT_LIM		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MIS_ALTMODE	1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MIS_DIST_1WP	900.0	MIS_DIST_1WP		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MIS_DIST_WPS	900.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MIS_LTRMIN_ALT	-1.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MIS_MNT_YAW_CTL	0	MIS_MNT_YAW_CTL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MIS_TAKEOFF_ALT	2.5	MIS_TAKEOFF_ALT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MIS_TAKEOFF_REQ	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MIS_YAW_ERR	12.0	MIS_YAW_ERR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MIS_YAW_TMT	-1.0	MIS_YAW_TMT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+MNT_MODE_IN	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MOT_ORDERING	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MOT_SLEW_MAX	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+MPC_ACC_DOWN_MAX	3.0	MPC_ACC_DOWN_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_ACC_HOR	3.0	MPC_ACC_HOR		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_ACC_HOR_MAX	2.0	MPC_ACC_HOR_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_ACC_UP_MAX	4.0	MPC_ACC_UP_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_ALT_MODE	0	MPC_ALT_MODE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_DEC_HOR_SLOW	5.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_HOLD_DZ	0.10000000149011612			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_HOLD_MAX_XY	0.25	MPC_HOLD_MAX_XY		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_HOLD_MAX_Z	0.6000000238418579	MPC_HOLD_MAX_Z		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_JERK_AUTO	8.0	MPC_JERK_AUTO		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_JERK_MAX	20.0	MPC_JERK_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_JERK_MIN	8.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_LAND_ALT1	10.0	MPC_LAND_ALT1		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_LAND_ALT2	5.0	MPC_LAND_ALT2		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_LAND_RC_HELP	0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_LAND_SPEED	0.699999988079071	MPC_LAND_SPEED		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_LAND_VEL_XY	2.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_MANTHR_MIN	0.07999999821186066	MPC_MANTHR_MIN		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_MAN_TILT_MAX	35.0	MPC_MAN_TILT_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_MAN_Y_MAX	150.0	MPC_MAN_Y_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_MAN_Y_TAU	0.07999999821186066	MPC_MAN_Y_TAU		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_POS_MODE	1	MPC_POS_MODE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_SPOOLUP_TIME	1.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_THR_CURVE	0	MPC_THR_CURVE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_THR_HOVER	0.5	MPC_THR_HOVER		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_THR_MAX	1.0	MPC_THR_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_THR_MIN	0.15000000596046448	MPC_THR_MIN		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_TILTMAX_AIR	45.0	MPC_TILTMAX_AIR		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_TILTMAX_LND	12.0	MPC_TILTMAX_LND		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_TKO_RAMP_T	3.0	MPC_TKO_RAMP_T		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_TKO_SPEED	1.5	MPC_TKO_SPEED		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_VELD_LP	5.0	MPC_VELD_LP		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_VEL_MANUAL	0.30000001192092896	MPC_VEL_MANUAL		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_CRUISE	0.30000001192092896	MPC_XY_CRUISE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_MAN_EXPO	0.6000000238418579			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_P	0.949999988079071	MPC_XY_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_TRAJ_P	0.5	MPC_XY_TRAJ_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_VEL_D	0.10000000149011612			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_VEL_I	0.05999999865889549			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_VEL_MAX	0.30000001192092896	MPC_XY_VEL_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_XY_VEL_P	0.44999998807907104			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_YAWRAUTO_MAX	45.0	MPC_YAWRAUTO_MAX		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_YAW_EXPO	0.6000000238418579			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_YAW_MODE	0	MPC_YAW_MODE		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_MAN_EXPO	0.6000000238418579			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_P	1.2000000476837158	MPC_Z_P		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_VEL_D	0.0			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_VEL_I	0.10000000149011612			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_VEL_MAX_DN	2.0	MPC_Z_VEL_MAX_DN		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_VEL_MAX_UP	3.0	MPC_Z_VEL_MAX_UP		v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+MPC_Z_VEL_P	0.20000000298023224			v118_default_retune_later	Start from native v1.18 controller semantics; tune only after the bench and restrained-flight gates.
+NAV_ACC_RAD	2.0	NAV_ACC_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_AH_ALT	600.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_AH_LAT	-265847810			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_AH_LON	1518423250			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_ACT	0	NAV_DLL_ACT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_DLL_AH_T	120.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_CHSK	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_CH_ALT	600.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_CH_LAT	-266072120			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_CH_LON	1518453890			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_CH_T	120.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_DLL_N	2			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_FORCE_VT	1	NAV_FORCE_VT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_FT_DST	8.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_FT_FS	1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_FT_RS	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_FW_ALTL_RAD	5.0	NAV_FW_ALTL_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_FW_ALT_RAD	10.0	NAV_FW_ALT_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_GPSF_LT	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_GPSF_P	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_GPSF_R	15.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_GPSF_TR	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_LOITER_RAD	50.0	NAV_LOITER_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_MC_ALT_RAD	0.800000011920929	NAV_MC_ALT_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_MIN_FT_HT	8.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_RCL_ACT	3	NAV_RCL_ACT	3	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+NAV_RCL_LT	120.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_TRAFF_AVOID	1	NAV_TRAFF_AVOID		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+NAV_TRAFF_A_RADM	500.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+NAV_TRAFF_A_RADU	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_MODE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_PITCH	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_RATE	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_ROLL	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_TLT_ANG	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_ATT_TLT_DIR	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_DFC_MAX_THR	0.15000000596046448			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+OMNI_PROJ_AXES	1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+PLD_BTOUT	5.0	PLD_BTOUT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PLD_FAPPR_ALT	0.10000000149011612	PLD_FAPPR_ALT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PLD_HACC_RAD	0.20000000298023224	PLD_HACC_RAD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PLD_MAX_SRCH	3	PLD_MAX_SRCH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PLD_SRCH_ALT	10.0	PLD_SRCH_ALT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PLD_SRCH_TOUT	10.0	PLD_SRCH_TOUT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+PWM_DISARMED	900			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS1	-1	PWM_MAIN_DIS1		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS2	-1	PWM_MAIN_DIS2		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS3	-1	PWM_MAIN_DIS3		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS4	-1	PWM_MAIN_DIS4		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS5	-1	PWM_MAIN_DIS5		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS6	-1	PWM_MAIN_DIS6		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS7	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_DIS8	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL1	-1	PWM_MAIN_FAIL1		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL2	-1	PWM_MAIN_FAIL2		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL3	-1	PWM_MAIN_FAIL3		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL4	-1	PWM_MAIN_FAIL4		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL5	-1	PWM_MAIN_FAIL5		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL6	-1	PWM_MAIN_FAIL6		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL7	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_FAIL8	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX1	-1	PWM_MAIN_MAX1		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX2	-1	PWM_MAIN_MAX2		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX3	-1	PWM_MAIN_MAX3		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX4	-1	PWM_MAIN_MAX4		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX5	-1	PWM_MAIN_MAX5		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX6	-1	PWM_MAIN_MAX6		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX7	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MAX8	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN1	-1	PWM_MAIN_MIN1		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN2	-1	PWM_MAIN_MIN2		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN3	-1	PWM_MAIN_MIN3		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN4	-1	PWM_MAIN_MIN4		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN5	-1	PWM_MAIN_MIN5		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN6	-1	PWM_MAIN_MIN6		airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN7	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_MIN8	-1			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV1	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV2	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV3	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV4	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV5	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_REV6	0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM1	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM2	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM3	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM4	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM5	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAIN_TRIM6	0.0			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MAX	1950			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_MIN	1075			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+PWM_RATE	400			airframe_owned	Airframe 6100 owns geometry, function assignment, and output defaults; do not layer legacy output parameters over it.
+RBCLW_SER_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC10_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC10_MAX	2064.0	RC10_MAX	2064.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC10_MIN	964.0	RC10_MIN	964.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC10_REV	1.0	RC10_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC10_TRIM	1514.0	RC10_TRIM	1514.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC11_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC11_MAX	2000.0	RC11_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC11_MIN	1000.0	RC11_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC11_REV	1.0	RC11_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC11_TRIM	1500.0	RC11_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC12_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC12_MAX	2000.0	RC12_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC12_MIN	1000.0	RC12_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC12_REV	1.0	RC12_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC12_TRIM	1500.0	RC12_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC13_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC13_MAX	2000.0	RC13_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC13_MIN	1000.0	RC13_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC13_REV	1.0	RC13_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC13_TRIM	1500.0	RC13_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC14_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC14_MAX	2000.0	RC14_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC14_MIN	1000.0	RC14_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC14_REV	1.0	RC14_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC14_TRIM	1500.0	RC14_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC15_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC15_MAX	2000.0	RC15_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC15_MIN	1000.0	RC15_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC15_REV	1.0	RC15_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC15_TRIM	1500.0	RC15_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC16_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC16_MAX	2000.0	RC16_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC16_MIN	1000.0	RC16_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC16_REV	1.0	RC16_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC16_TRIM	1500.0	RC16_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC17_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC17_MAX	2000.0	RC17_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC17_MIN	1000.0	RC17_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC17_REV	1.0	RC17_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC17_TRIM	1500.0	RC17_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC18_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC18_MAX	2000.0	RC18_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC18_MIN	1000.0	RC18_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC18_REV	1.0	RC18_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC18_TRIM	1500.0	RC18_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC1_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC1_MAX	1924.0	RC1_MAX	1924.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC1_MIN	1104.0	RC1_MIN	1104.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC1_REV	1.0	RC1_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC1_TRIM	1510.0	RC1_TRIM	1510.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC2_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC2_MAX	1924.0	RC2_MAX	1924.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC2_MIN	1104.0	RC2_MIN	1104.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC2_REV	-1.0	RC2_REV	-1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC2_TRIM	1508.0	RC2_TRIM	1508.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC3_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC3_MAX	1924.0	RC3_MAX	1924.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC3_MIN	1104.0	RC3_MIN	1104.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC3_REV	1.0	RC3_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC3_TRIM	1104.0	RC3_TRIM	1104.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC4_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC4_MAX	1924.0	RC4_MAX	1924.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC4_MIN	1104.0	RC4_MIN	1104.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC4_REV	1.0	RC4_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC4_TRIM	1514.0	RC4_TRIM	1514.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC5_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC5_MAX	2064.0	RC5_MAX	2064.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC5_MIN	964.0	RC5_MIN	964.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC5_REV	1.0	RC5_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC5_TRIM	1514.0	RC5_TRIM	1514.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC6_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC6_MAX	2000.0	RC6_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC6_MIN	1000.0	RC6_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC6_REV	1.0	RC6_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC6_TRIM	1500.0	RC6_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC7_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC7_MAX	2000.0	RC7_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC7_MIN	1000.0	RC7_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC7_REV	1.0	RC7_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC7_TRIM	1500.0	RC7_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC8_DZ	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC8_MAX	2000.0	RC8_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC8_MIN	1000.0	RC8_MIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC8_REV	1.0	RC8_REV		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC8_TRIM	1500.0	RC8_TRIM		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC9_DZ	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC9_MAX	2064.0	RC9_MAX	2064.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC9_MIN	964.0	RC9_MIN	964.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC9_REV	1.0	RC9_REV	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC9_TRIM	1514.0	RC9_TRIM	1514.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_ACRO_TH	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_ARMSWITCH_TH	0.25	RC_ARMSWITCH_TH	0.25	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_ASSIST_TH	0.25			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_AUTO_TH	0.75			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_CHAN_CNT	18	RC_CHAN_CNT	18	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_FAILS_THR	0	RC_FAILS_THR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_FLT_CUTOFF	10.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_FLT_SMP_RATE	50.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_GEAR_TH	0.25	RC_GEAR_TH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_KILLSWITCH_TH	0.25	RC_KILLSWITCH_TH	0.25	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_LOITER_TH	0.5	RC_LOITER_TH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAN_TH	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_ACRO_SW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_ARM_SW	9	RC_MAP_ARM_SW	9	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_AUX1	0	RC_MAP_AUX1		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_AUX2	0	RC_MAP_AUX2		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_AUX3	0	RC_MAP_AUX3		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_AUX4	0	RC_MAP_AUX4		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_AUX5	0	RC_MAP_AUX5		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_AUX6	0	RC_MAP_AUX6		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_FAILSAFE	0	RC_MAP_FAILSAFE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_FLAPS	0	RC_MAP_FLAPS		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_FLTMODE	5	RC_MAP_FLTMODE	5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_GEAR_SW	0	RC_MAP_GEAR_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_KILL_SW	10	RC_MAP_KILL_SW	10	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_LOITER_SW	0	RC_MAP_LOITER_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_MAN_SW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_MODE_SW	0	RC_MAP_MODE_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_OFFB_SW	0	RC_MAP_OFFB_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_PARAM1	0	RC_MAP_PARAM1		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_PARAM2	0	RC_MAP_PARAM2		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_PARAM3	0	RC_MAP_PARAM3		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_PITCH	2	RC_MAP_PITCH	2	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_POSCTL_SW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_RATT_SW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_RETURN_SW	0	RC_MAP_RETURN_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_ROLL	1	RC_MAP_ROLL	1	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_STAB_SW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_MAP_THROTTLE	3	RC_MAP_THROTTLE	3	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_MAP_TRANS_SW	0	RC_MAP_TRANS_SW		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_MAP_YAW	4	RC_MAP_YAW	4	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+RC_OFFB_TH	0.5	RC_OFFB_TH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_POSCTL_TH	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_RATT_TH	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_RETURN_TH	0.5	RC_RETURN_TH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RC_STAB_TH	0.5			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+RC_TRANS_TH	0.25	RC_TRANS_TH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_CONE_ANG	0	RTL_CONE_ANG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_DESCEND_ALT	10.0	RTL_DESCEND_ALT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_LAND_DELAY	0.0	RTL_LAND_DELAY		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_MIN_DIST	5.0	RTL_MIN_DIST		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_RETURN_ALT	1.0	RTL_RETURN_ALT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+RTL_TYPE	0	RTL_TYPE		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SDLOG_BOOT_BAT	0	SDLOG_BOOT_BAT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SDLOG_DIRS_MAX	0	SDLOG_DIRS_MAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SDLOG_MISSION	0	SDLOG_MISSION		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SDLOG_MODE	0	SDLOG_MODE	2	bench_override	Log from boot through shutdown for the disarmed bench evidence window.
+SDLOG_PROFILE	19	SDLOG_PROFILE	19	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SDLOG_UTC_OFFSET	0	SDLOG_UTC_OFFSET		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SDLOG_UUID	0	SDLOG_UUID		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_BARO_QNH	1013.25	SENS_BARO_QNH		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_BOARD_ROT	0	SENS_BOARD_ROT	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SENS_BOARD_X_OFF	2.9672276973724365	SENS_BOARD_X_OFF	2.9672276973724365	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SENS_BOARD_Y_OFF	3.5340259075164795	SENS_BOARD_Y_OFF	3.5340259075164795	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SENS_BOARD_Z_OFF	0.0	SENS_BOARD_Z_OFF	0.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SENS_CM8JL65_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_DPRES_OFF	0.0	SENS_DPRES_OFF		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_EN_BATT	0	SENS_EN_BATT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_EN_LL40LS	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_MB12XX	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_MPDT	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_PGA460	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_PMW3901	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_PX4FLOW	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_SF1XX	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_EN_THERMAL	-1	SENS_EN_THERMAL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_EN_TRANGER	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_FLOW_MAXHGT	3.0	SENS_FLOW_MAXHGT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_FLOW_MAXR	2.5	SENS_FLOW_MAXR		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_FLOW_MINHGT	0.699999988079071	SENS_FLOW_MINHGT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_FLOW_ROT	6	SENS_FLOW_ROT		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SENS_LEDDAR1_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_SF0X_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_TFMINI_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SENS_ULAND_CFG	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SER_GPS1_BAUD	0	SER_GPS1_BAUD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SER_TEL1_BAUD	57600	SER_TEL1_BAUD	921600	bench_override	Move TELEM1 from legacy MAVLink 57600 to dedicated DDS 921600.
+SER_TEL2_BAUD	921600	SER_TEL2_BAUD		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_AUTOCONFIG	0	SYS_AUTOCONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_AUTOSTART	6100	SYS_AUTOSTART	6100	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SYS_CAL_ACCEL	0	SYS_CAL_ACCEL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_CAL_BARO	0	SYS_CAL_BARO		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_CAL_GYRO	0	SYS_CAL_GYRO		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_CAL_TDEL	24	SYS_CAL_TDEL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_CAL_TMAX	10	SYS_CAL_TMAX		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_CAL_TMIN	5	SYS_CAL_TMIN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_HAS_BARO	0	SYS_HAS_BARO	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SYS_HAS_MAG	0	SYS_HAS_MAG	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+SYS_HITL	0	SYS_HITL		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_MC_EST_GROUP	2			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SYS_PARAM_VER	1	SYS_PARAM_VER		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+SYS_RESTART_TYPE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+SYS_STCK_EN	1	SYS_STCK_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+TC_A_ENABLE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+TC_B_ENABLE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+TC_G_ENABLE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+TEL_BST_EN	0	TEL_BST_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+TEL_FRSKY_CONFIG	0	TEL_FRSKY_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+TEL_HOTT_CONFIG	0	TEL_HOTT_CONFIG		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+THR_MDL_FAC	0.0	THR_MDL_FAC		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+TRIG_MODE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+UAVCAN_ENABLE	0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+VT_B_DEC_MSS	2.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+VT_B_REV_DEL	0.0			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
+WV_EN	0	WV_EN		v118_default_not_imported	The value is not vehicle identity required for LAB-02A; use the reset v1.18/airframe default.
+		EKF2_BARO_CTRL	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		EKF2_GPS_CTRL	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		EKF2_OF_CTRL	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		EKF2_RNG_CTRL	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		MAN_DEADZONE	0.1	new_v118_bench_parameter	Use the v1.18 normalized deadzone and verify neutral sticks on the bench.
+		SDLOG_BACKEND	1	new_v118_bench_parameter	Use SD logging only so MAVLink logging cannot consume USB or serial bandwidth.
+		SYS_HAS_GPS	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_CFG	101	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_DOM_ID	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_FLCTRL	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_KEY	1	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_NS_IDX	-1	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_PTCFG	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_RX_TO	-1	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_SYNCC	0	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_SYNCT	1	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.
+		UXRCE_DDS_TX_TO	3	new_v118_bench_parameter	Explicit v1.18 vehicle or bench contract; no exact legacy source parameter.

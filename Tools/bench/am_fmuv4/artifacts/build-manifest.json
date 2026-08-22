@@ -1,0 +1,19 @@
+{
+  "schema": "am-fw02-artifact-manifest-v1",
+  "created_utc": "2026-08-22T20:21:04Z",
+  "flight_authorized": false,
+  "flash_authorized": false,
+  "intended_gate": "LAB-02A props-removed bench",
+  "v118": {
+    "source_commit": "2272d2d46e2b295b67e57b0f305ca8889a26fb03",
+    "source_description": "v1.18.0-beta2-29-g2272d2d46e",
+    "target": "px4_fmu-v4_am_tilted_hex",
+    "firmware": "build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.px4",
+    "parameters": "Tools/bench/am_fmuv4/params/am_fmuv4_lab02a.params"
+  },
+  "rollback": {
+    "kind": "source-equivalent, not the historically flashed binary",
+    "firmware": "refactor_campaign/rollback/legacy-v110-1326-source-equivalent/px4_fmu-v4_default.px4",
+    "parameters": "refactor_campaign/rollback/legacy-v110-1326-source-equivalent/aug11-final-711-params.params"
+  }
+}
