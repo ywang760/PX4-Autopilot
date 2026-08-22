@@ -21,6 +21,72 @@ env:
   PYTHONUNBUFFERED: 1
 
 jobs:
+  fmuv4-firmware:
+    name: FMUv4 firmware fit and contract
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out PX4 and pinned submodules
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          submodules: recursive
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: Tools/setup/requirements.txt
+
+      - name: Install PX4 NuttX dependencies
+        run: ./Tools/setup/ubuntu.sh --no-sim-tools
+
+      - name: Verify pinned ARM compiler
+        run: test "$(arm-none-eabi-gcc -dumpfullversion)" = "13.2.1"
+
+      - name: Restore compiler cache
+        id: ccache
+        uses: ./.github/actions/setup-ccache
+        with:
+          cache-key-prefix: am-fmuv4
+          max-size: 400M
+
+      - name: Build upstream FMUv4 baseline
+        run: make px4_fmu-v4_default
+
+      - name: Build AM FMUv4 firmware
+        run: make px4_fmu-v4_am_tilted_hex
+
+      - name: Audit image, airframe, modules, stacks, and serial budget
+        run: >-
+          python3 Tools/ci/am_fmuv4/audit.py
+          --build-dir build/px4_fmu-v4_am_tilted_hex
+          --baseline-build-dir build/px4_fmu-v4_default
+          --report build/px4_fmu-v4_am_tilted_hex/fw01-audit.json
+
+      - name: Upload firmware evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: am-fmuv4-${{ github.run_id }}
+          path: |
+            build/px4_fmu-v4_am_tilted_hex/fw01-audit.json
+            build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.px4
+            build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.map
+            build/px4_fmu-v4_am_tilted_hex/boardconfig
+            build/px4_fmu-v4_default/px4_fmu-v4_default.map
+            build/px4_fmu-v4_default/boardconfig
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Save compiler cache
+        if: always()
+        uses: ./.github/actions/save-ccache
+        with:
+          cache-primary-key: ${{ steps.ccache.outputs.cache-primary-key }}
+
   lifecycle-and-safe-faults:
     name: ${{ matrix.label }}
     runs-on: ubuntu-24.04
