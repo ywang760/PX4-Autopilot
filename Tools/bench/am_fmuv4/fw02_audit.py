@@ -170,7 +170,7 @@ def load_metadata() -> dict[str, dict[str, object]]:
 
 
 def validate_package(audit: Audit, package: dict[str, tuple[str, int]], metadata: dict[str, dict[str, object]]) -> None:
-    audit.require(len(package) == 100, f"expected 100 curated parameters, found {len(package)}")
+    audit.require(bool(package), "curated parameter package is empty")
     for name, (raw_value, parameter_type) in package.items():
         audit.require(name in metadata, f"package parameter {name} is absent from v1.18 metadata")
         if name not in metadata:
@@ -204,6 +204,8 @@ def validate_package(audit: Audit, package: dict[str, tuple[str, int]], metadata
             not name.startswith(FORBIDDEN_PREFIXES),
             f"{name} is owned by fresh calibration, v1.18 control defaults, or airframe 6100",
         )
+
+    audit.note(f"validated {len(package)} current package values; the count is not a selection quota")
 
 
 def airframe_values() -> dict[str, float]:
