@@ -2,14 +2,16 @@
 
 ## Objective and authority boundary
 
-LAB-02A answers four questions in order:
+LAB-02A answers five questions in order:
 
 1. Can the installed FMUv4 always be reached and recovered through direct USB?
 2. Does the reviewed v1.18 image boot with the installed sensors, SD card, RC,
-   airframe, and fresh 100-parameter package?
-3. Does dedicated TELEM1 DDS remain healthy while the FC logs and while both
+   airframe, and reviewed fresh parameter package?
+3. Do raw battery voltage/current observations expose or constrain the known
+   disagreement between QGC remaining percentage and an external tester?
+4. Does dedicated TELEM1 DDS remain healthy while the FC logs and while both
    FC and SNUC resource margins are measured?
-4. Does the link recover cleanly from a stopped Agent while the vehicle stays
+5. Does the link recover cleanly from a stopped Agent while the vehicle stays
    disarmed?
 
 This document does not itself authorize a flash. At the lab, A0 ends at a
@@ -40,10 +42,12 @@ aircraft power:
 Abort the current stage on unexpected Arm, output motion, reboot, hard fault,
 USB loss, parameter-reset ambiguity, sensor identity ambiguity, DDS type/error
 spam, missing SD logging, resource exhaustion, a declining memory trend, or a
-mode/RC mapping different from the LAB-01 record. Engage physical kill if
-needed, obtain an authoritative Disarmed observation, remove propulsion power,
-and preserve evidence. Do not improvise a parameter, wiring, or firmware fix
-inside the same run.
+mode/RC mapping different from the LAB-01 record. Also stop any battery-powered
+stage on damaged/puffed/hot cells, unexpected voltage collapse, or an
+unexplained raw voltage/current discrepancy. Engage physical kill if needed,
+obtain an authoritative Disarmed observation, remove propulsion power, and
+preserve evidence. Do not improvise a parameter, wiring, or firmware fix inside
+the same run.
 
 ## Before leaving for the lab
 
@@ -59,6 +63,10 @@ inside the same run.
 - [ ] Confirm direct USB cable reach from the FC to the recovery workstation.
   USB is required for this bench/recovery session; it is not a flight tether
   architecture decision.
+- [ ] Bring the identified 6S battery, an independent trusted pack/per-cell
+  voltmeter or tester, and—if current accuracy is to be qualified—a trusted
+  current/coulomb reference or charger-capacity record. Percentage alone is
+  not a calibration reference.
 - [ ] Prepare an evidence directory named with UTC time and a unique run ID.
 
 ## A0 — offline identity and direct-USB recovery readiness
@@ -117,7 +125,8 @@ No other stage authorization implies this one.
    - outputs 1--6 show disarmed/min/max `900/1075/1950`;
    - TELEM1 has MAVLink disabled, DDS enabled, and 921600 baud;
    - RC maps are channels 1/2/3/4, mode 5, Arm 9, kill 10; and
-   - the 100 curated parameters match the imported package.
+   - every value in the reviewed package matches the import. The current count
+     is recorded as evidence, not treated as a fixed target.
 
    Run the machine check against that full export:
 
@@ -159,12 +168,33 @@ Remain Disarmed. Do not run actuator tests and do not authorize Arm.
    invalid and reviewed separately.
 6. Verify the SD card mounts and `logger status` reports boot-to-shutdown SD
    logging. Power-cycle once and prove a new ULog was created and closed.
-7. If battery/power-module measurement is enabled, compare QGC voltage with an
-   independent trusted meter. Do not infer current accuracy from voltage alone.
+7. Perform the battery/power-module observation because prior operation showed
+   QGC reporting less remaining capacity than an external tester:
+
+   - identify the battery and record chemistry, nominal capacity, cycle/history
+     information if known, and physical condition;
+   - before connection, record pack voltage and every cell voltage with the
+     independent instrument;
+   - after the documented avionics/SNUC load stabilizes, record timestamp,
+     SNUC power state, external pack voltage, PX4/QGC voltage, current,
+     remaining percentage, and discharged capacity;
+   - export `BAT1_V_DIV`, `BAT1_A_PER_V`, `BAT_V_OFFS_CURR`,
+     `BAT1_C_MULT`, `BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, `BAT1_I_FILT`,
+     `BAT1_V_FILT`, `BAT1_CAPACITY`, `BAT1_N_CELLS`, `BAT1_V_CHARGED`,
+     `BAT1_V_EMPTY`, `BAT_LOW_THR`, `BAT_CRIT_THR`, `BAT_EMERGEN_THR`,
+     `COM_LOW_BAT_ACT`, `COM_FLTT_LOW_ACT`, and `COM_ARM_BAT_MIN`;
+   - if a trusted current/coulomb reference is available, compare it under the
+     same steady load. Otherwise mark current scale and remaining percentage
+     unqualified rather than inferring current accuracy from voltage; and
+   - do not change battery parameters in this run or force QGC percentage to
+     match a voltage-based tester percentage.
 
 **A2 gate:** installed sensor identity is understood, fresh IMU calibration is
-saved, orientation and RC mappings match, and SD logging survives reboot. No
-output or Arm has occurred.
+saved, orientation and RC mappings match, SD logging survives reboot, and the
+battery comparison is captured with raw quantities and load context. Any
+unexplained voltage mismatch is a stop; current/remaining accuracy may remain
+explicitly unqualified for this disarmed gate but must be resolved before a
+props-on gate. No output or Arm has occurred.
 
 ## A3 — disarmed DDS and resource baseline
 
@@ -265,9 +295,15 @@ offline. Do not proceed directly to motor output testing or Arm.
 
 If A0--A4 pass, prepare a separate LAB-02B proposal for:
 
-1. props-removed output 1--6 isolation/order/direction/endpoints; then
-2. a separately authorized Arm-only idle interval, including the ten-second
+1. target-oriented review of output failure state, Commander/failsafe,
+   land/disarm, and battery parameters, including the unresolved QGC battery
+   estimate; then
+2. props-removed output 1--6 isolation/order/direction/endpoints; then
+3. a separately authorized Arm-only idle interval, including the ten-second
    preflight auto-disarm and kill behavior.
 
 Those stages must reuse the LAB-01 physical map and explicitly regress SI-001.
-They remain non-flight tests and are not authorized by this runbook.
+They remain non-flight tests and are not authorized by this runbook. Native
+MC/MPC parameters and mocap-to-EKF timing/quality require independent review
+and test before restrained or free flight. Near-term flight qualification is
+mocap-only; camera/policy/external-perception flight is out of scope.

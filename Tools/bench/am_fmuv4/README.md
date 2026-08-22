@@ -15,7 +15,10 @@ Arm are later, separate authorizations after the disarmed gate passes.
 
 The accepted August v1.10 snapshot contains 711 parameters. The generated
 v1.18 metadata contains 1,318 parameters, but only 491 names are shared. The
-fresh package imports 100 reviewed values, not all 711 legacy values.
+current fresh package imports 100 reviewed values, not all 711 legacy values.
+The number 100 is the outcome of the present semantic selection, not a target
+size, quota, or stable interface. Package identity and rationale matter; its
+count may change when a parameter decision changes.
 
 The complete one-row-per-legacy-parameter disposition is in
 [`params/migration-inventory.tsv`](params/migration-inventory.tsv). Its current
@@ -32,6 +35,49 @@ summary is:
 | Native v1.18 default | 278 | Not required to identify the vehicle for this bench gate |
 | Removed, no bench successor | 167 | Obsolete or irrelevant legacy parameter is not imported |
 | New v1.18 bench parameter | 17 | DDS, absent-hardware, logging, and estimator settings with no exact legacy row |
+
+This is a complete **legacy-oriented migration inventory**, not a claim that
+every v1.18 parameter has been individually accepted. The generator applies a
+small explicit successor table and broad ownership rules after the package has
+been manually selected. In particular, a remaining same-name parameter is
+currently labeled `v118_default_not_imported`; that label means "do not
+override the v1.18 default for LAB-02A," not "unused" or "semantically audited
+for flight."
+
+## Target-side review boundary
+
+The package is an override layer, not the complete effective PX4
+configuration. After reset, all 1,318 compiled parameters exist; airframe 6100,
+the package, and fresh calibration then override subsets of those defaults.
+The current target namespace divides as follows:
+
+| Current treatment | Target parameters |
+| --- | ---: |
+| Explicit LAB-02A package | 100 |
+| Explicit airframe 6100 values outside the package | 70 |
+| Written by fresh calibration rather than legacy import | 40 |
+| Native MC/MPC values explicitly deferred for later tuning | 69 |
+| Legacy-named parameters left at native v1.18 defaults | 277 |
+| `PWM_MAIN_FAIL1`--`PWM_MAIN_FAIL6` left at native v1.18 defaults | 6 |
+| New v1.18-only parameters left at native defaults | 756 |
+| **Total** | **1,318** |
+
+Many parameters outside the package are active. For example, native MC/MPC
+gains will control the aircraft, fresh `CAL_*` values will be written during
+calibration, and Commander and land-detector defaults still define behavior.
+Others belong to inactive or absent hardware and vehicle classes. Absence from
+the package only means that LAB-02A does not override the compiled/airframe
+default.
+
+Before any output/Arm gate, perform a target-oriented review of output failure
+state, Commander/failsafe, land/disarm, and battery/power parameters. Before
+restrained or free flight, additionally review and independently test native
+MC/MPC control parameters and the mocap-to-EKF timing/quality contract. A
+review candidate does not automatically become an imported value: retaining a
+native v1.18 default can be the reviewed result. The six `PWM_MAIN_FAIL*`
+parameters are called out separately because the broad legacy `PWM_*`
+classification labels them airframe-owned, while airframe 6100 does not
+currently set them explicitly.
 
 The six `bench_override` rows are the effective differences from a same-name
 copy. The important behavioral decisions are:
@@ -63,12 +109,39 @@ Other boundaries are equally intentional:
   position and yaw (`EKF2_EV_CTRL=11`) with vision height. GPS, barometer,
   magnetometer, optical flow, and range fusion are disabled because those
   sensors are not installed in the accepted vehicle configuration.
+- In the near-term campaign, "external vision" means the mocap pose delivered
+  to PX4. Camera/policy/external-perception flight is out of scope; no setting
+  here qualifies that path.
 - Legacy `CAL_*`, `MC_*`, and `MPC_*` values are excluded. Installed IMUs are
   freshly calibrated on v1.18; native controller defaults remain until a later
   tuning gate.
 - Legacy `COM_KILL_DISARM=30` has no direct v1.18 equivalent and is not
   emulated. Kill lockdown, landed detection, and normal Disarm must be observed
   under the staged qualification.
+
+## Battery evidence and qualification boundary
+
+The current aircraft has previously shown a lower QGC remaining percentage
+than an external battery tester. Treat battery remaining as unqualified until
+the discrepancy is explained. QGC percentage and a simple voltage-based tester
+percentage are both model estimates; neither is accepted as ground truth by
+itself.
+
+LAB-02A records raw pack and per-cell voltage before connection, externally
+measured voltage under the documented avionics load, PX4/QGC voltage, current,
+remaining percentage, discharged capacity, battery identity, and SNUC power
+state. Review at least `BAT1_V_DIV`, `BAT1_A_PER_V`, `BAT_V_OFFS_CURR`,
+`BAT1_C_MULT`, `BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, voltage/current filter
+settings, capacity/cell/charged/empty settings, and low/critical/emergency
+thresholds and Commander actions (`COM_LOW_BAT_ACT`, `COM_FLTT_LOW_ACT`, and
+`COM_ARM_BAT_MIN`). Do not tune a scale merely to make two percentage displays
+agree. Current-scale and remaining-capacity qualification requires a trusted
+current/coulomb reference or controlled charger-returned capacity evidence.
+
+Until that review passes, QGC remaining percentage is advisory rather than a
+sole flight-abort signal. Any future props-on gate must use a separately
+approved conservative raw-voltage/per-cell limit, flight-time/capacity limit,
+and physical battery inspection in addition to QGC reporting.
 
 ## Companion pin set and authority
 
@@ -144,7 +217,7 @@ python3 Tools/ci/am_fmuv4/audit.py \
 python3 Tools/bench/am_fmuv4/fw02_audit.py
 ```
 
-`fw02_audit.py` validates all 100 package values against generated v1.18
+`fw02_audit.py` validates every current package value against generated v1.18
 metadata, rejects calibration/controller/output leakage, regenerates the full
 711-row inventory, verifies immutable Agent pins and subscribe-only source,
 and checks the exact v1.18 and local rollback hashes. Use
