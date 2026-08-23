@@ -6,6 +6,8 @@ repo=${2:-$(git rev-parse --show-toplevel)}
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 
 set -a
+# pins.env is resolved beside this script rather than from the invoking CWD.
+# shellcheck disable=SC1091
 source "$script_dir/pins.env"
 set +a
 
