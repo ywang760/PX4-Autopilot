@@ -11,7 +11,8 @@
 1	1	SENS_BOARD_Y_OFF	3.5340259075164795	9
 1	1	SENS_BOARD_Z_OFF	0.0	9
 
-# Installed 6S 10 Ah power module and final August battery policy.
+# Legacy 6S 10 Ah starting values for the disarmed diagnostic gate only.
+# Current/remaining are known unqualified and must not authorize output or flight.
 1	1	BAT1_A_PER_V	36.36800003051758	9
 1	1	BAT1_CAPACITY	10000.0	9
 1	1	BAT1_N_CELLS	6	6

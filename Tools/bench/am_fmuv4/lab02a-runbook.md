@@ -173,18 +173,27 @@ Remain Disarmed. Do not run actuator tests and do not authorize Arm.
 7. Perform the battery/power-module observation because prior operation showed
    QGC reporting less remaining capacity than an external tester:
 
+   - begin from the offline finding that the legacy current signal was only
+     `0.117--0.410 A` median during 7.024 kg airborne operation and therefore
+     did not measure total aircraft current; do not accept a plausible-looking
+     idle number as resolution of that finding;
    - identify the battery and record chemistry, nominal capacity, cycle/history
      information if known, and physical condition;
+   - trace and record whether the propulsion and SNUC battery branches actually
+     pass through the sensor feeding the Pixracer `POWER/CSen` input, without
+     disturbing hidden wiring during this run;
    - before connection, record pack voltage and every cell voltage with the
      independent instrument;
    - after the documented avionics/SNUC load stabilizes, record timestamp,
      SNUC power state, external pack voltage, PX4/QGC voltage, current,
      remaining percentage, and discharged capacity;
    - export `BAT1_V_DIV`, `BAT1_A_PER_V`, `BAT_V_OFFS_CURR`,
-     `BAT1_C_MULT`, `BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, `BAT1_I_FILT`,
-     `BAT1_V_FILT`, `BAT1_CAPACITY`, `BAT1_N_CELLS`, `BAT1_V_CHARGED`,
+     `BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, `BAT1_I_FILT`, `BAT1_V_FILT`,
+     `BAT1_CAPACITY`, `BAT1_N_CELLS`, `BAT1_V_CHARGED`,
      `BAT1_V_EMPTY`, `BAT_LOW_THR`, `BAT_CRIT_THR`, `BAT_EMERGEN_THR`,
      `COM_LOW_BAT_ACT`, `COM_FLTT_LOW_ACT`, and `COM_ARM_BAT_MIN`;
+   - record `BAT1_C_MULT` only to establish that the SMBus-only multiplier is
+     inactive for the selected analog source; do not use it as a current fix;
    - if a trusted current/coulomb reference is available, compare it under the
      same steady load. Otherwise mark current scale and remaining percentage
      unqualified rather than inferring current accuracy from voltage; and

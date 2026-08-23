@@ -127,16 +127,37 @@ the discrepancy is explained. QGC percentage and a simple voltage-based tester
 percentage are both model estimates; neither is accepted as ground truth by
 itself.
 
+The offline audit of all 15 accepted August flight ULogs and both LAB-01B
+ULogs establishes that the legacy current channel is not total aircraft
+current: per-log airborne medians are only `0.117--0.410 A`, 14--38 percent of
+airborne samples are exactly zero, and current has essentially no collective
+correlation while pack voltage does. The integrated counter advances only
+`3.41--10.17 mAh` per accepted flight while displayed remaining moves by up to
+29.74 percentage points. The reproducible evidence and exact hashes are in
+`refactor_campaign/baseline/battery-telemetry-audit.md`. This does not identify
+whether the cause is sensor topology, wiring, module compatibility, scale, or
+offset; no scale change is justified yet.
+
+PX4 v1.18's voltage-sag/internal-resistance model also depends on measured
+current, so the firmware upgrade cannot make remaining/current valid without
+physical current-path evidence. The imported `BAT1_V_CHARGED=4.2` is retained
+only as the legacy starting condition for the disarmed diagnostic gate. Both
+v1.10 and v1.18 describe the loaded/full estimator reference as normally below
+the 4.2 V nominal maximum; it is an explicit `FW-03` review/test candidate, not
+an accepted flight value.
+
 LAB-02A records raw pack and per-cell voltage before connection, externally
 measured voltage under the documented avionics load, PX4/QGC voltage, current,
 remaining percentage, discharged capacity, battery identity, and SNUC power
 state. Review at least `BAT1_V_DIV`, `BAT1_A_PER_V`, `BAT_V_OFFS_CURR`,
-`BAT1_C_MULT`, `BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, voltage/current filter
-settings, capacity/cell/charged/empty settings, and low/critical/emergency
-thresholds and Commander actions (`COM_LOW_BAT_ACT`, `COM_FLTT_LOW_ACT`, and
-`COM_ARM_BAT_MIN`). Do not tune a scale merely to make two percentage displays
-agree. Current-scale and remaining-capacity qualification requires a trusted
-current/coulomb reference or controlled charger-returned capacity evidence.
+`BAT1_I_OVERWRITE`, `BAT1_R_INTERNAL`, voltage/current filter settings,
+capacity/cell/charged/empty settings, and low/critical/emergency thresholds and
+Commander actions (`COM_LOW_BAT_ACT`, `COM_FLTT_LOW_ACT`, and
+`COM_ARM_BAT_MIN`). `BAT1_C_MULT` is an SMBus-only setting and is not an
+analog-current correction while `BAT1_SOURCE=0`; verify it remains inactive.
+Do not tune a scale merely to make two percentage displays agree. Current-scale
+and remaining-capacity qualification requires a trusted current/coulomb
+reference or controlled charger-returned capacity evidence.
 
 Until that review passes, QGC remaining percentage is advisory rather than a
 sole flight-abort signal. Any future props-on gate must use a separately
