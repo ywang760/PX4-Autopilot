@@ -104,6 +104,16 @@ OVERRIDE_RATIONALE = {
     "SER_TEL1_BAUD": "Move TELEM1 from legacy MAVLink 57600 to dedicated DDS 921600.",
 }
 
+EXACT_RATIONALE = {
+    "BAT1_A_PER_V": "Preserve the legacy diagnostic starting scale only; captured flight current is not total aircraft current, so topology and a trusted current reference remain required.",
+    "BAT1_V_CHARGED": "Preserve the observed 4.2 V/cell diagnostic starting condition only; loaded/full-voltage guidance and the pessimistic remaining estimate require FW-03 review.",
+    "BAT1_V_DIV": "Preserve the legacy diagnostic starting scale so PX4 voltage can be compared with a trusted meter under the same load; this is not voltage-scale qualification.",
+}
+
+SAME_VALUE_CHANGED_SEMANTICS = {
+    "BAT1_R_INTERNAL": "The retained -1 value changes behavior: v1.10 used throttle-based sag compensation, while v1.18 enables online resistance estimation driven by measured current; it is not flight-qualified with the invalid legacy current signal.",
+}
+
 
 class Audit:
     def __init__(self) -> None:
@@ -279,9 +289,15 @@ def inventory_text(
             covered_targets.add(name)
             old_numeric = numeric(old_value, legacy[name][1])
             new_numeric = numeric(*package[name])
-            if close(old_numeric, new_numeric):
+            if name in SAME_VALUE_CHANGED_SEMANTICS:
+                disposition = "same_value_changed_semantics"
+                rationale = SAME_VALUE_CHANGED_SEMANTICS[name]
+            elif close(old_numeric, new_numeric):
                 disposition = "migrate_exact"
-                rationale = "Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics."
+                rationale = EXACT_RATIONALE.get(
+                    name,
+                    "Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.",
+                )
             else:
                 disposition = "bench_override"
                 rationale = OVERRIDE_RATIONALE.get(name, "Use the reviewed v1.18 bench value instead of the legacy value.")

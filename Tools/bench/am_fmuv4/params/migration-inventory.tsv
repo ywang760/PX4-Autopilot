@@ -1,12 +1,12 @@
 legacy_name	legacy_value	target_name	target_value	disposition	rationale
 BAT1_ADC_CHANNEL	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
-BAT1_A_PER_V	36.36800003051758	BAT1_A_PER_V	36.36800003051758	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_A_PER_V	36.36800003051758	BAT1_A_PER_V	36.36800003051758	migrate_exact	Preserve the legacy diagnostic starting scale only; captured flight current is not total aircraft current, so topology and a trusted current reference remain required.
 BAT1_CAPACITY	10000.0	BAT1_CAPACITY	10000.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
 BAT1_N_CELLS	6	BAT1_N_CELLS	6	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
-BAT1_R_INTERNAL	-1.0	BAT1_R_INTERNAL	-1.0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_R_INTERNAL	-1.0	BAT1_R_INTERNAL	-1.0	same_value_changed_semantics	The retained -1 value changes behavior: v1.10 used throttle-based sag compensation, while v1.18 enables online resistance estimation driven by measured current; it is not flight-qualified with the invalid legacy current signal.
 BAT1_SOURCE	0	BAT1_SOURCE	0	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
-BAT1_V_CHARGED	4.199999809265137	BAT1_V_CHARGED	4.199999809265137	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
-BAT1_V_DIV	21.5	BAT1_V_DIV	21.5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
+BAT1_V_CHARGED	4.199999809265137	BAT1_V_CHARGED	4.199999809265137	migrate_exact	Preserve the observed 4.2 V/cell diagnostic starting condition only; loaded/full-voltage guidance and the pessimistic remaining estimate require FW-03 review.
+BAT1_V_DIV	21.5	BAT1_V_DIV	21.5	migrate_exact	Preserve the legacy diagnostic starting scale so PX4 voltage can be compared with a trusted meter under the same load; this is not voltage-scale qualification.
 BAT1_V_EMPTY	3.5	BAT1_V_EMPTY	3.5	migrate_exact	Preserve the accepted August vehicle-specific value with unchanged v1.18 semantics.
 BAT1_V_LOAD_DROP	0.30000001192092896			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.
 BAT_ADC_CHANNEL	-1			removed_not_imported	No exact v1.18 parameter exists and no reviewed successor is required for LAB-02A.

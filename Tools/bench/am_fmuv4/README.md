@@ -26,7 +26,8 @@ summary is:
 
 | Disposition | Count | Meaning |
 | --- | ---: | --- |
-| Exact accepted value retained | 74 | Vehicle-specific value has unchanged v1.18 semantics |
+| Exact accepted value retained | 73 | Vehicle-specific value has unchanged v1.18 semantics |
+| Same value, changed semantics | 1 | `BAT1_R_INTERNAL=-1` changes from throttle-based to measured-current-based sag estimation and remains unqualified |
 | Reviewed bench override | 6 | A safer/new transport or logging value intentionally differs |
 | Translated successor | 4 | Old semantic intent maps to a renamed/redesigned v1.18 parameter |
 | Airframe 6100 owns it | 48 | Geometry, function assignment, and output defaults come from the embedded airframe |
