@@ -414,14 +414,16 @@ def validate_artifacts(audit: Audit, ci: bool) -> None:
     audit.require(document["v118"]["source_commit"] == "2272d2d46e2b295b67e57b0f305ca8889a26fb03", "unexpected firmware source commit")
 
     locations = {
-        "v118/px4_fmu-v4_am_tilted_hex.px4": REPO / "build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.px4",
-        "v118/px4_fmu-v4_am_tilted_hex.bin": REPO / "build/px4_fmu-v4_am_tilted_hex/px4_fmu-v4_am_tilted_hex.bin",
+        "v118/px4_fmu-v4_am_tilted_hex.px4": WORKSPACE
+        / "refactor_campaign/lab/LAB-02/artifacts/fw02-candidate-2272d2d46e/px4_fmu-v4_am_tilted_hex.px4",
+        "v118/px4_fmu-v4_am_tilted_hex.bin": WORKSPACE
+        / "refactor_campaign/lab/LAB-02/artifacts/fw02-candidate-2272d2d46e/px4_fmu-v4_am_tilted_hex.bin",
         "v118/am_fmuv4_lab02a.params": PACKAGE,
         "legacy-v110/px4_fmu-v4_default.px4": WORKSPACE / "refactor_campaign/rollback/legacy-v110-1326-source-equivalent/px4_fmu-v4_default.px4",
         "legacy-v110/aug11-final-711-params.params": LEGACY_DEFAULT,
     }
     listed: set[str] = set()
-    ci_rebuilt_firmware = {
+    local_locked_firmware = {
         "v118/px4_fmu-v4_am_tilted_hex.px4",
         "v118/px4_fmu-v4_am_tilted_hex.bin",
     }
@@ -434,16 +436,17 @@ def validate_artifacts(audit: Audit, ci: bool) -> None:
         audit.require(name in locations, f"checksum lists unknown artifact {name}")
         if name in locations:
             path = locations[name]
-            local_only = name.startswith("legacy-v110/")
+            local_only = name in local_locked_firmware or name.startswith("legacy-v110/")
             audit.require(path.exists() or (ci and local_only), f"missing local artifact {path}")
             if path.exists():
-                if ci and name in ci_rebuilt_firmware:
-                    audit.note(
-                        f"CI rebuilt {name} carries the PR Git revision; its run-specific hash is recorded separately"
-                    )
-                else:
-                    audit.require(sha256(path) == digest, f"checksum mismatch for {name}")
+                audit.require(sha256(path) == digest, f"checksum mismatch for {name}")
     audit.require(listed == set(locations), "checksum manifest does not list the exact expected artifact set")
+
+    if ci:
+        for name in ("px4_fmu-v4_am_tilted_hex.px4", "px4_fmu-v4_am_tilted_hex.bin"):
+            rebuilt = REPO / "build/px4_fmu-v4_am_tilted_hex" / name
+            audit.require(rebuilt.exists(), f"CI rebuild is missing {rebuilt}")
+        audit.note("CI rebuild carries the PR Git revision; its run-specific hashes are recorded separately")
 
 
 def parse_args() -> argparse.Namespace:

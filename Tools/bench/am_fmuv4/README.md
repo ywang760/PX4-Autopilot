@@ -240,6 +240,13 @@ source-equivalent recovery candidate, not the missing historically flashed
 binary; restoring it also requires the matched 711-parameter export and a
 separate rollback decision.
 
+The checksum-locked v1.18 bytes live outside the mutable PX4 build directory at
+`refactor_campaign/lab/LAB-02/artifacts/fw02-candidate-2272d2d46e/`. This
+separation is deliberate: a normal `make` overwrites `build/` and embeds build
+identity, so an old checksum is not useful unless the exact bytes it names are
+also retained. The local audit validates that immutable copy; CI validates a
+fresh same-source build and publishes separate run-specific hashes.
+
 The checksum-locked v1.18 bytes were built from the merged FW-01 source commit
 recorded in the manifest. FW-02 changes only bench tooling and documentation,
 but PX4 embeds the current Git revision in every rebuild, so a CI image built at

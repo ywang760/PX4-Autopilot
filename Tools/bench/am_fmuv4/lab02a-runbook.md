@@ -57,9 +57,11 @@ the same run.
   cable. Pins 1, 4, and 5 remain unconnected.
 - [ ] Build and verify `am-px4-jazzy-xrce:fw02` on the SNUC or export/import
   that exact locally verified image. Do not build from moving tags at the lab.
-- [ ] Copy the exact v1.18 `.px4`, curated `.params`, SHA256 manifest, and the
-  complete source-equivalent v1.10 recovery directory to the recovery
-  workstation. Keep a second offline copy.
+- [ ] Copy the exact v1.18 `.px4` from
+  `refactor_campaign/lab/LAB-02/artifacts/fw02-candidate-2272d2d46e/`, the
+  reviewed `.params`, SHA256 manifest, and the complete source-equivalent v1.10
+  recovery directory to the recovery workstation. Keep a second offline copy;
+  do not substitute a later file from the mutable PX4 `build/` directory.
 - [ ] Confirm direct USB cable reach from the FC to the recovery workstation.
   USB is required for this bench/recovery session; it is not a flight tether
   architecture decision.
